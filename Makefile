@@ -18,6 +18,7 @@ check:
 		_site
 
 install: $(PROJECT_DEPS)
+	$(BUNDLER) install
 	$(NPM) install
 
 update: $(PROJECT_DEPS)
