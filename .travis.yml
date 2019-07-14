@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 8.16.0
+before_install:
+  - rvm install 2.6.3
+install:
+  - bundle install
+  - make install
+script:
+  - make build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: _site
+  target_branch: master
+  on:
+    branch: source

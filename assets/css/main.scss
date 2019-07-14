@@ -1,0 +1,20 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "minima";
+
+.side-content-panel {
+    height: 100vh;
+    min-height: 300px;
+    top: 0;
+    position: sticky;
+}
+
+nav.header {
+    border-top: 5px solid #424242;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 55.95px;
+}
