@@ -1,0 +1,34 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "variables";
+
+.avatar {
+    border-radius: 100%;
+    border: solid 2px #CCC;
+    padding: 2px;
+    width: 40%;
+}
+
+.connect {
+    cursor: pointer;
+
+    .icon {
+        font-size: 2em;
+    }
+    
+    .fa-facebook {
+        color: $facebook_color;
+    }
+    
+    .fa-github {
+        color: $github_color;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .avatar {
+        width: 25%;
+    }
+}

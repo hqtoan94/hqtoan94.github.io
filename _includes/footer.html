@@ -1,4 +1,4 @@
-<footer class="row shadow">
+<footer class="row shadow mx-0">
     <div class="col-12 col-lg-6 offset-lg-3 pt-3">
         <div class="px-3">
             <h2 class="footer-heading">{{ site.title | escape }}</h2>
@@ -12,11 +12,7 @@
                     </ul>
                 </div>
 
-                <div class="col-12 col-md-3">
-                    {%- include social.html -%}
-                </div>
-
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 offset-md-3">
                     <p>{{- site.description | escape -}}</p>
                 </div>
             </div>
