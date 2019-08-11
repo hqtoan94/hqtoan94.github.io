@@ -17,6 +17,10 @@
             <div class="p-3">
                 {{ content }}
             </div>
+            {% if page.fbcomment %}
+                <hr/>
+                <div class="fb-comments d-flex justify-content-center" data-width="" data-numposts="5"></div>
+            {% endif %}
         </div>
         <div class="d-none d-lg-block col-lg-3">
             <div class="d-flex justify-content-center align-items-center side-content-panel">
@@ -26,6 +30,9 @@
     </main>
 
     {%- include footer.html -%}
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v4.0&appId=433542120706345"></script>
 
     <script src="{{'/assets/vendor/jquery.min.js' | prepend: site.baseurl}}"></script>
     <script src="{{'/assets/vendor/popper.min.js' | prepend: site.baseurl}}"></script>
