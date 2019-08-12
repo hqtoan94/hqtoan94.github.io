@@ -2,7 +2,6 @@ SHELL := /bin/bash
 NPM := npm
 VENDOR_DIR = assets/vendor/
 BUNDLER := bundler
-
 PROJECT_DEPS := package.json
 
 .PHONY: all clean install update

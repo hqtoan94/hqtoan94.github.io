@@ -6,7 +6,6 @@ permalink: /privacy_policy/
 ---
 <p>Effective date: August 11, 2019</p>
 
-
 <p>Toan's Blog ("us", "we", or "our") operates the https://hqtoan94.github.io website (the "Service").</p>
 
 <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy  for Toan's Blog is created with the help of the <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator.php">Free Privacy Policy Generator</a>.</p>
