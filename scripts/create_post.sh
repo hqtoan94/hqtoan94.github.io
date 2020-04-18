@@ -8,7 +8,7 @@ CATEGORIES=$2
 
 echo Creating post: $TITLE, with categories: $CATEGORIES
 
-FILENAME=_posts/$SHORT_DATE-"$((tr [A-Z] [a-z] | tr -s ' ' | tr ' ' '-') <<< "$1")".md
+FILENAME=_posts/$SHORT_DATE-"$((tr -dc '[:alnum:]- ' | tr [A-Z] [a-z] | tr -s ' ' | tr ' ' '-') <<< "$1")".md
 
 if test -f $FILENAME
 then
@@ -20,5 +20,8 @@ title:  "$TITLE"
 date:   $DATE
 categories: $CATEGORIES
 fbcomment: yes
+
+description:
+image:
 ---" > $FILENAME
 fi
