@@ -21,7 +21,7 @@ custom_css:
 </div>
 
 {:.text-center}
-> "Part of growing is makeing decisions and living with the consequences" - Coach Carter
+> "Part of growing is making decisions and living with the consequences" - Coach Carter
 
 {:.mt-5}
 Sau 1 thời gian tới lui để chọn lựa 1 nền tảng/công cụ nào phù hợp nhất cho mình để viết blog, thì cuối cùng mình quyết định dừng lại với [Github Pages + Jekyll](https://jekyllrb.com/docs/github-pages/). Và đây, đây là trang blog cá nhân của mình 🥳🥳:
