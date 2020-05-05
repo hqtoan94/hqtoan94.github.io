@@ -34,10 +34,10 @@ build: include-npm-deps
 	$(BUNDLER) exec jekyll build
 
 serve: include-npm-deps
-	$(BUNDLER) exec jekyll serve
+	$(BUNDLER) exec jekyll serve 2>/dev/null
 
 bundler:
 	$(BUNDLER)
 
 watch: include-npm-deps
-	$(BUNDLER) exec jekyll serve --watch
+	$(BUNDLER) exec jekyll serve --watch 2>/dev/null
