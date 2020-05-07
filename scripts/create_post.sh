@@ -5,6 +5,8 @@ SHORT_DATE=`date +%Y-%m-%d`
 
 TITLE=$1
 CATEGORIES=$2
+TAGS=$3
+AUTHOR=$4
 
 echo Creating post: $TITLE, with categories: $CATEGORIES
 
@@ -16,10 +18,12 @@ then
 else
     echo "---
 layout: post
-title:  "$TITLE"
+title:  $TITLE
 date:   $DATE
 categories: $CATEGORIES
-fbcomment: yes
+tags: $TAGS
+comments: true
+author: $AUTHOR
 
 description:
 image:
