@@ -12,21 +12,6 @@ We're just some developers who want to giving our 2 cents to the world. Cuz shar
 
 ---
 
-<div class="row p-3">
-    <img src="/assets/images/avatars/hqtoan94.jpg" class="avatar" alt="Toan's Avatar">
-    <div class="flex-fill ml-3 text-right py-3">
-        <h3 class="m-0"><a href="/about/hqtoan94/">Toan Quoc Ho</a> - Software Developer</h3>
-        <i><small>"Part of growing is making decisions and living with the consequences"</small></i>
-        <div class="d-flex flex-row justify-content-end mt-3">
-            <div class="pl-5">
-                Posts: 15
-            </div>
-            <div class="pl-5">
-                Categories: 15
-            </div>
-            <div class="pl-5">
-                Tags: 15
-            </div>
-        </div>
-    </div>
-</div>
+{%- include about_us_panel.html author="hqtoan94" name="Toan Quoc Ho" -%}
+{%- include about_us_panel.html author="dotdak" name="Hung Hong Nguyen" -%}
+{%- include about_us_panel.html author="boylavua18" name="Minh Quoc Phan" -%}

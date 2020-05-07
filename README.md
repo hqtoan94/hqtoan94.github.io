@@ -24,3 +24,13 @@
 ![Writing flow image](https://github.com/hqtoan94/hqtoan94.github.io/blob/source/assets/images/writing-flow.png)
 
 I've setup Travis to build new posts so that we just need to focus on our writing branches and `source` branch. Every changes in source branch will trigger the build and deploy the blog with new posts.
+
+## Commands:
+
+1. Create new post:
+
+```
+./scripts/create_post.sh "<Post title>" "[Category1, Category2]" "[Tag1, Tag2]" <author_username>
+```
+
+Enjoy!

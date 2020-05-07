@@ -10,7 +10,9 @@ custom_css:
 ---
 
 <div class="d-flex justify-content-center flex-column align-items-center my-3">
-    <img src="/assets/images/avatars/hqtoan94.jpg" class="avatar" alt="Toan's Avatar">
+    <div class="col-6 col-md-4">
+        <img src="/assets/images/avatars/hqtoan94.jpg" class="avatar" alt="Toan's Avatar">
+    </div>
     <h3 class="mt-1">Toan Quoc Ho</h3>
     <p class="text-center">Senior Software Engineer at KMS Technology, Inc</p>
     <div class="connect mx-3 d-flex flex-row align-items-center">

@@ -54,3 +54,5 @@ exclude:
   - Makefile
   - package.json
   - package-lock.json
+
+permalink: /:year/:month/:day/:title:output_ext

@@ -8,7 +8,6 @@
     border-radius: 100%;
     border: solid 2px #CCC;
     padding: 2px;
-    width: 40%;
 }
 
 .connect {
@@ -24,11 +23,5 @@
     
     .fa-github {
         color: $github_color;
-    }
-}
-
-@media (min-width: $breakpoint-tablet) {
-    .avatar {
-        width: 25%;
     }
 }
