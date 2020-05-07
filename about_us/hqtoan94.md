@@ -3,7 +3,7 @@ layout: page
 type: sub-page
 title: About Toan
 title_verbose: About Toan
-permalink: /about/hqtoan94
+permalink: /about/hqtoan94/
 custom_css:
     - about.css
 ---

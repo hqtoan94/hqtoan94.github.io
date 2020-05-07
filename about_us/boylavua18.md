@@ -3,7 +3,7 @@ layout: page
 type: sub-page
 title: About Minh
 title_verbose: About Minh
-permalink: /about/boylavua18
+permalink: /about/boylavua18/
 custom_css:
     - about.css
 ---

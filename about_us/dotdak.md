@@ -3,7 +3,7 @@ layout: page
 type: sub-page
 title: About Hung
 title_verbose: About Hung
-permalink: /about/dotdak
+permalink: /about/dotdak/
 custom_css:
     - about.css
 ---
