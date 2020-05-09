@@ -56,3 +56,5 @@ exclude:
   - package-lock.json
 
 permalink: /:year/:month/:day/:title:output_ext
+
+google_analytics: UA-165875592-1
