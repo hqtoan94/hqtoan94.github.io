@@ -13,6 +13,11 @@ layout: default
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
+    {%- if page.image -%}
+    <div>
+      <img src="{{ page.image }}" alt="Post image">
+    </div>
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content mx-auto" itemprop="articleBody">
