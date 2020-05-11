@@ -29,7 +29,7 @@ custom_css:
 </div>
 
 {:.text-center}
-> "Part of growing is making decisions and living with the consequences" - Coach Carter
+> "{{ author.quote.content }}" - {{ author.quote.said }}
 
 {:.mt-3}
 ### Summary

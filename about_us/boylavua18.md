@@ -28,7 +28,7 @@ custom_css:
 </div>
 
 {:.text-center}
-> "Once you stop learning, you start dying" - Albert Einstein
+> "{{ author.quote.content }}" - {{ author.quote.said }}
 
 {:.mt-3}
 ### Summary

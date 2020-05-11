@@ -4,11 +4,20 @@
   badge:
     link: https://www.youracclaim.com/badges/f2e37a71-ab7c-4abe-829f-dbeb1532d9af/public_url
     image: /assets/images/icons/aws_solutions_architect_associate.png
+  quote:
+    content: "Part of growing is making decisions and living with the consequences"
+    said: Coach Carter
 
 - nickname: dotdak
   name: Hung Hong Nguyen
   avatar: /assets/images/avatars/dotdak.jpg
+  quote:
+    content: Part of growing is making decisions and living with the consequences
+    said: Coach Carter
   
 - nickname: boylavua18
   name: Minh Quoc Phan
   avatar: /assets/images/avatars/boylavua18.jpg
+  quote:
+    content: Once you stop learning, you start dying
+    said: Albert Einstein

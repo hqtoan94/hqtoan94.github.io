@@ -23,7 +23,7 @@ We're just some developers who want to giving our 2 cents to the world. Cuz shar
       <div class="flex-fill text-center text-md-right py-3">
           <h3 class="m-0"><a href="/about/{{ author.nickname }}/">{{ author.name }}</a></h3>
           <h5>Software Developer</h5>
-          <i class="d-none d-md-block"><small>"Part of growing is making decisions and living with the consequences"</small></i>
+          <i class="d-none d-md-block"><small>"{{ author.quote.content }}"</small></i>
           {%- assign post_counter = 0 -%}
           {%- assign categories = "" | split: ',' -%}
           {%- assign tags = "" | split: ',' -%}
