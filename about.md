@@ -17,7 +17,7 @@ We're just some developers who want to giving our 2 cents to the world. Cuz shar
       <div class="h-100 col-6 col-sm-4">
           <img src="{{ author.avatar }}" class="avatar" alt="{{ author.nickname}} Avatar">
           {% if author.badge %}
-            <a href="{{ author.badge.link }}" target="_blank"><img class="cert-badge position-absolute" src="{{ author.badge.image }}"></a>
+            <a href="{{ author.badge.link }}" target="_blank"><img class="cert-badge position-absolute" src="{{ author.badge.image }}" alt="Cert badge"></a>
           {% endif %}
       </div>
       <div class="flex-fill text-center text-md-right py-3">

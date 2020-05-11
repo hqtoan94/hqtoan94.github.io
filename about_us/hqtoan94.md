@@ -15,7 +15,7 @@ custom_css:
 <div class="d-flex justify-content-center flex-column align-items-center my-3">
     <div class="col-6 col-md-3 position-relative">
         <img src="{{ author.avatar }}" class="avatar" alt="{{ author.name }}'s Avatar">
-        <a href="{{ author.badge.link }}" target="_blank"><img class="cert-badge position-absolute" src="{{ author.badge.image }}"></a>
+        <a href="{{ author.badge.link }}" target="_blank"><img class="cert-badge position-absolute" src="{{ author.badge.image }}" alt="Cert Badge"></a>
     </div>
     <h3 class="mt-1">{{ author.name }}</h3>
     <p class="text-center">I'm faking to be a Tech Lead</p>

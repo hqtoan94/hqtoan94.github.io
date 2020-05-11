@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 NPM := npm
 VENDOR_DIR = assets/vendor/
-BUNDLER := bundler
+BUNDLER := bundle
 PROJECT_DEPS := package.json
 
 .PHONY: all clean install update
@@ -9,8 +9,8 @@ PROJECT_DEPS := package.json
 all : serve
 
 check:
-	$(JEKYLL) doctor
-	$(HTMLPROOF) --check-html \
+	jekyll doctor
+	htmlproofer --check-html \
 		--http-status-ignore 999 \
 		--internal-domains localhost:4000 \
 		--assume-extension \
@@ -31,7 +31,7 @@ include-npm-deps:
 	cp node_modules/bootstrap/dist/js/bootstrap.min.js.map $(VENDOR_DIR)
 
 build: include-npm-deps
-	$(BUNDLER) exec jekyll build
+	JEKYLL_ENV=production $(BUNDLER) exec jekyll build
 
 serve: include-npm-deps
 	$(BUNDLER) exec jekyll serve --host=0.0.0.0 2>/dev/null
