@@ -13,8 +13,8 @@ We're just some developers who want to giving our 2 cents to the world. Cuz shar
 ---
 
 {% for author in site.data.authors %}
-  <div class="row justify-content-center justify-content-start p-3 shadow mb-5 mt-3 mx-5">
-      <div class="h-100 col-6 col-sm-3">
+  <div class="row justify-content-center justify-content-start p-3 shadow mb-5 mt-3 mx-xl-5">
+      <div class="h-100 col-6 col-sm-4">
           <img src="{{ author.avatar }}" class="avatar" alt="{{ author.nickname}} Avatar">
           {% if author.badge %}
             <a href="{{ author.badge.link }}" target="_blank"><img class="cert-badge position-absolute" src="{{ author.badge.image }}"></a>
