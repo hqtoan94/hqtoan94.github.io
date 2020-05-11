@@ -54,6 +54,7 @@ exclude:
   - Makefile
   - package.json
   - package-lock.json
+  - scripts
 
 permalink: /:year/:month/:day/:title:output_ext
 
