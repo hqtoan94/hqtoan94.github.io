@@ -37,7 +37,6 @@ custom_css:
 * 1 year of experience in Python, Neo4j, Splunk
 * Have worked with Python - Django, PyQT
 * Have a taste of NodeJS, Express and SocketIO.
-* Have a intern knowledge of Git
 
 ### Education
 
