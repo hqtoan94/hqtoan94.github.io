@@ -33,5 +33,7 @@ author: $AUTHOR
 
 description:
 image:
+  link:
+  description:
 ---" > $FILENAME
 fi
