@@ -12,7 +12,13 @@ echo Creating post: $TITLE, with categories: $CATEGORIES
 
 FILENAME=_posts/$SHORT_DATE-"$((tr -dc '[:alnum:]- ' | tr [A-Z] [a-z] | tr -s ' ' | tr ' ' '-') <<< "$1")".md
 
-if test -f $FILENAME
+if [ ! -d _posts ]
+then
+    echo 'Missing post folder. Creating a new one.'
+    mkdir _posts
+fi
+
+if [ -f $FILENAME ]
 then
     echo 'Post already exists'
 else

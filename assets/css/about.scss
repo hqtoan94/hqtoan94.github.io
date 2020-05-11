@@ -35,3 +35,9 @@
     right: 0;
     width: 35%;
 }
+
+@media (min-width: $breakpoint-medium) {
+    .w-md-75 {
+        width: 75% !important;
+    }
+}
