@@ -11,14 +11,15 @@ all : serve
 check:
 	jekyll doctor
 	htmlproofer --check-html \
-		--http-status-ignore 999 \
-		--internal-domains localhost:4000 \
-		--assume-extension \
+		--disable-external \
 		_site
 
 install: $(PROJECT_DEPS)
 	$(BUNDLER) install
 	$(NPM) install
+
+clean:
+	jekyll clean
 
 update: $(PROJECT_DEPS)
 	$(NPM) update
