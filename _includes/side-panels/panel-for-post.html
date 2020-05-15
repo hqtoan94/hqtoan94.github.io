@@ -1,0 +1,29 @@
+<style>
+  #post-panel {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  }
+
+  #post-panel.active {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<div id="post-panel" class="position-fixed mt-5">
+  <p class="mb-0">Find this useful?</p>
+  {% include buy_me_a_coffee.html %}
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var top = 100;
+    var postPanelElement = document.getElementById('post-panel');
+    if (document.body.scrollTop > top || document.documentElement.scrollTop > top) {
+      postPanelElement.classList.add('active');
+    } else {
+      postPanelElement.classList.remove('active');
+    }
+  });
+</script>

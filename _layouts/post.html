@@ -11,7 +11,11 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- assign author_link = "/about/" | append: page.author -%}
+      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+          itemprop="name">
+          <a href="{{ author_link | relative_url }}">{{ page.author }}</a>
+        </span></span>
       {%- endif -%}</p>
     {%- if page.image.link -%}
     <figure class="image text-center">

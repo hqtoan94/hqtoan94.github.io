@@ -9,16 +9,25 @@
 
     <main class="row py-3 mx-0" aria-label="Content">
         <div class="d-none d-lg-block col-lg-2">
-            <div class="d-flex justify-content-center align-items-center side-content-panel">
-                <!-- TODO -->
+            <div class="d-flex side-content-panel justify-content-center">
+                {% if page.side_panel.left_panel %}
+                    {% include {{ page.side_panel.left_panel }} %}
+                {% endif %}
             </div>
         </div>
         <div class="col-12 col-lg-8 bg-light shadow rounded">
             <div class="p-3">
                 {{ content }}
+                {% if page.buy_me_a_coffee %}
+                    <div class="d-lg-none">
+                        <hr class="mb-3">
+                        <p class="mb-0">Find this useful?</p>
+                        {% include buy_me_a_coffee.html %}
+                    </div>
+                {% endif %}
             </div>
             {% if page.comments %}
-                <div id="disqus_thread" class="col-8 mx-auto"></div>
+                <div id="disqus_thread" class="col-lg-8 mx-auto"></div>
                 <script>
                     /**
                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -40,8 +49,10 @@
             {% endif %}
         </div>
         <div class="d-none d-lg-block col-lg-2">
-            <div class="d-flex justify-content-center align-items-center side-content-panel">
-                <!-- TODO -->
+            <div class="d-flex side-content-panel">
+                {% if page.side_panel.right_panel %}
+                    {% include {{ page.side_panel.right_panel }} %}
+                {% endif %}
             </div>
         </div>
     </main>

@@ -9,6 +9,11 @@ custom_css:
 
 {:.mt-5}
 We're just some developers who want to giving our 2 cents to the world. Cuz sharing is caring.
+And if you're caring about us?
+
+<div class="d-flex mb-3 justify-content-center">
+    {% include buy_me_a_coffee.html %}
+</div>
 
 ---
 

@@ -29,7 +29,11 @@ date:   $DATE
 categories: $CATEGORIES
 tags: $TAGS
 comments: true
+buy_me_a_coffee: true
 author: $AUTHOR
+
+side_panel:
+  left_panel: side-panels/panel-for-post.html
 
 description:
 image:

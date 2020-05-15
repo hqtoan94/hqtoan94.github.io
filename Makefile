@@ -33,11 +33,8 @@ include-npm-deps:
 build: include-npm-deps
 	JEKYLL_ENV=production $(BUNDLER) exec jekyll build
 
-serve: include-npm-deps
-	$(BUNDLER) exec jekyll serve --host=0.0.0.0 2>/dev/null
-
 bundler:
 	$(BUNDLER)
 
 watch: include-npm-deps
-	$(BUNDLER) exec jekyll serve --host=0.0.0.0 --watch 2>/dev/null
+	$(BUNDLER) exec jekyll serve --host=0.0.0.0 2>/dev/null
