@@ -116,7 +116,7 @@ rvm:
   2.6.3
 ```
 
-Travis CI has some default options for some fields in the configuration file. You could take a look at [Building a Ruby Project](https://docs.travis-ci.com/user/languages/ruby/){:target="_blank"} in Travis CI for more information. And one of that is `install` field and by default, it will run `bundle install --jobs=3 --retry=3` so we don't have to be worry about installing dependencies for Jekyll project anymore.
+Travis CI has some default options for some fields in the configuration file. You could take a look at [Building a Ruby Project](https://docs.travis-ci.com/user/languages/ruby/){:target="_blank"} in Travis CI for more information. And one of that is `install` field and by default, it will run `bundle install --jobs=3 --retry=3` so we don't have to be worried about installing dependencies for Jekyll project anymore.
 
 The next step, we will set value for script field to build Jekyll project and execute `htmlproofer` right after that.
 
