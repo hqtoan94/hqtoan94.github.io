@@ -5,7 +5,11 @@ date:   Tue May 12 07:27:37 +07 2020
 categories: [Guideline]
 tags: [Blogging]
 comments: true
+buy_me_a_coffee: true
 author: hqtoan94
+
+side_panel:
+  left_panel: side-panels/panel-for-post.html
 
 description:
 image:
@@ -13,11 +17,11 @@ image:
   description:
 ---
 
-It's hard to pick the right platform to start writing. I've been stuck for years just to choose my favo one (`Wordpress, Medium, Hexo, Jekyll, ...`). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I've been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It really great to share people your stories.
+It's hard to pick the right platform to start writing. I've been stuck for years just to choose my favo one (`Wordpress, Medium, Hexo, Jekyll, ...`). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I've been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It really great to share with people your stories.
 
 ### Why Jekyll + Github Pages?
 
-I like to use Jekyll because it's so flexible when writing posts so I can custom whatever I want, write custom css and create custom plugins. As a developer, I really like to have code highlight feature when writing technical posts.
+Jekyll got me the first look because of its flexibility, I could tell you guys a bunch of things that Jekyll can do for you like customizing the CSS or the plugins. As a developer, I'm way excited in code highlight feature when writing technical posts.
 
 With Github Pages, it's a part of Github so we could leverage a lot of cool features which Github provided for us. In this post, I also show you guys deployment process which utilize Travis (they allow free pipelines for public repository).
 
@@ -35,7 +39,7 @@ Just kidding!! After installing Jekyll, we can use it to create a new site by us
 
 (Ignore `2>/dev/null` part because there is a deprecated message issue with Jekyll 4.0, here is [Github issue](https://github.com/jekyll/jekyll/issues/7947){:target="_blank"} in case you want to follow)
 
-Great! Now you can write posts and publish it to the world already. We will move to the next phase to see how it does.
+Great! Now you can write posts and publish them to the world already. We will move to the next phase to see how it does.
 
 > Oh wait!.. In case you switch the environment or your friend join to write with you, make sure that all the gems are being installed before all steps. The command to install all gems in `Gemfile` is `bundle install`. Okay, let's move on to the next section.
 
@@ -95,7 +99,7 @@ Finished build step, you already have the website in `_site` folder. Now to depl
 
 #### 2. Automated:
 
-As you might now, there are a lot of CI tools which offer free plans for Open Source projects such as Circle CI, Travis CI, etc.. But in this post, I will utilize Travis CI because there are a some guideline to handle this step by using Travis CI. Jekyll has [guided us to integrate Travis CI](https://jekyllrb.com/docs/deployment/automated/){:target="_blank"} as a Continuous Integration Service. Travis CI also has something else for us, [Github Pages Deployment guideline](https://docs.travis-ci.com/user/deployment/pages/){:target="_blank"}. Why we're not combine those 2 documents so that we could have a complete CI/CD solution? Hell yeah, let's set it up.
+As you might now, there are a lot of CI tools which offer free plans for Open Source projects such as Circle CI, Travis CI, etc.. But in this post, I will utilize Travis CI because there are some guidelines to handle this step by using Travis CI. Jekyll has [guided us to integrate Travis CI](https://jekyllrb.com/docs/deployment/automated/){:target="_blank"} as a Continuous Integration Service. Travis CI also has something else for us, [Github Pages Deployment guideline](https://docs.travis-ci.com/user/deployment/pages/){:target="_blank"}. Why we don't combine those 2 documents so that we could have a complete CI/CD solution? Hell yeah, let's set it up.
 
 Firstly, we have to enable Travis and Github:
 
@@ -112,9 +116,9 @@ rvm:
   2.6.3
 ```
 
-Travis CI has some default options for some fields in the configuration file. You could take a look at [Building a Ruby Project](https://docs.travis-ci.com/user/languages/ruby/){:target="_blank"} in Travis CI for more information. And one of that is `install` field and by default, it will run `bundle install --jobs=3 --retry=3` so we don't have to worry about installing dependencies for Jekyll project anymore.
+Travis CI has some default options for some fields in the configuration file. You could take a look at [Building a Ruby Project](https://docs.travis-ci.com/user/languages/ruby/){:target="_blank"} in Travis CI for more information. And one of that is `install` field and by default, it will run `bundle install --jobs=3 --retry=3` so we don't have to be worry about installing dependencies for Jekyll project anymore.
 
-Next step, we will set value for script field to build Jekyll project and execute `htmlproofer` right after that.
+The next step, we will set value for script field to build Jekyll project and execute `htmlproofer` right after that.
 
 ```yaml
 script:
@@ -122,7 +126,7 @@ script:
   - bundle exec htmlproofer --check-html --disable-external _site
 ```
 
-Now you already have Travis CI configration as the Continuous Integrate Service. Final step, we will config Travis CI job to automatially deploy our blog. Just follow Github Pages Deployment guideline above to get the Token, set it up on Travis settings and add these lines:
+Now you already have Travis CI configration as the Continuous Integrate Service. The final step, we will config Travis CI job to automatially deploy our blog. Just follow Github Pages Deployment guideline above to get the Token, set it up on Travis settings and add these lines:
 
 ```yaml
 deploy:
@@ -162,8 +166,8 @@ cache: bundler # caching bundler gem packages will speed up build
 {% endhighlight %}
 </figure>
 
-From now on, when you push your post into a branch (neither `master` nor `source`) Travis CI will execute CI and CI only. This could help us to make sure that our new post won't break the site after generating. Then whenever we want to publish the post, just create PR into `source` branch. Merge it and Travis will handle the rest. It will execute CI process again, then deploy the site by bringing all content in `_site` folder into `master` branch as the configuration.
+From now on, when you push your post into a branch (neither `master` nor `source`) Travis CI will execute CI and CI only. This could help us to ensure that our new post won't break the site after generating. Then whenever we want to publish the post, just create PR into `source` branch. Merge it and Travis will handle the rest. It will execute CI process again, then deploy the site by bringing all content in `_site` folder into `master` branch as the configuration.
 
 ### Conclusion
 
-It's quite a long guideline to just setup a writing environment right? 😁. But yeah, I think it's necessary to share to you guys so that if you're stucking at choosing writing platform step then this could help you to by pass that step and move a head to share your thought and your knowledge to the world. Hope that this article not only helps you guys to setup your own blog but also gives you some initial idea about CI/CD for a small project. I will come up with another post soon, to discuss with you guys about CI/CD and what's the value it could bring to you and your projects.
+It's quite a long guideline to just setup a writing environment right? 😁. But yeah, I think it's necessary to share to you guys so that if you're stucking at choosing writing platform steps then this could help you to by pass these steps and move a head to share your thought and your knowledge to the world. Hope that this article not only helps you guys to setup your own blog but also gives you some initial idea about CI/CD for a small project. I will come up with another post soon, to discuss with you guys about CI/CD and what's the value it could bring to you and your projects.
