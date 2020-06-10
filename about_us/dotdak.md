@@ -28,6 +28,10 @@ custom_css:
     </div>
 </div>
 
+{:.text-center}
+> "{{ author.quote.content }}" - {{ author.quote.said }}
+
+{:.mt-3}
 ### Summary
 - 1 year of experience working with Python - Django, JavaScript, HTML, CSS
 - 6 months of experience working with Power BI, MSSQL Server, Microsoft SQL Server Analysis Services Tabular model
