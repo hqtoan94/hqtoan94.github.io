@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://hqtoan94.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hqtoan94.github.io/" rel="alternate" type="text/html" /><updated>2020-07-18T12:23:52+00:00</updated><id>https://hqtoan94.github.io/feed.xml</id><title type="html">AWK’s Blog</title><subtitle>Sharing is Caring</subtitle><entry><title type="html">Create personal blog using Jekyll and Github Pages</title><link href="https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html" rel="alternate" type="text/html" title="Create personal blog using Jekyll and Github Pages" /><published>2020-05-12T00:27:37+00:00</published><updated>2020-05-12T00:27:37+00:00</updated><id>https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages</id><content type="html" xml:base="https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html">&lt;p&gt;It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (&lt;code class=&quot;highlighter-rouge&quot;&gt;Wordpress, Medium, Hexo, Jekyll, ...&lt;/code&gt;). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-jekyll--github-pages&quot;&gt;Why Jekyll + Github Pages?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll got me the first look because of its flexibility, I could tell you guys a bunch of things that Jekyll can do for you like customizing the CSS or the plugins. As a developer, I’m way excited in code highlight feature when writing technical posts.&lt;/p&gt;
+
+&lt;p&gt;With Github Pages, it’s a part of Github so we could leverage a lot of cool features which is provided by Github. In this post, I also show you guys the deployment process which utilizes Travis (they allow free pipelines for public repository).&lt;/p&gt;
+
+&lt;p&gt;Okay. Let’s get started.&lt;/p&gt;
+
+&lt;h3 id=&quot;setup-writing-environment&quot;&gt;Setup writing environment&lt;/h3&gt;
+
+&lt;h4 id=&quot;jekyll&quot;&gt;&lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Follow the instruction to install Jekyll to the corresponding OS. Now you already have writing environment. Close the article 😄..&lt;/p&gt;
+
+&lt;p&gt;Just kidding!! After installing Jekyll, we can use it to create a new site by using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;PATH&amp;gt;&lt;/code&gt; (For more information: &lt;a href=&quot;https://jekyllrb.com/docs/usage/&quot; target=&quot;_blank&quot;&gt;Jekyll Command Line Usage&lt;/a&gt;). Then &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; to serve the site. Normally it will listen on port &lt;code class=&quot;highlighter-rouge&quot;&gt;4000&lt;/code&gt; so you can open your browser and type in: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/jekyll_serve.png&quot; alt=&quot;Jekyll Serve Command&quot; class=&quot;col-12 col-md-6 d-block mx-auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Ignore &lt;code class=&quot;highlighter-rouge&quot;&gt;2&amp;gt;/dev/null&lt;/code&gt; part because there is a deprecated message issue with Jekyll 4.0, here is &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/7947&quot; target=&quot;_blank&quot;&gt;Github issue&lt;/a&gt; in case you want to follow)&lt;/p&gt;
+
+&lt;p&gt;Great! Now you can write posts and publish them to the world. We will move to the next phase to see how it does.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Oh wait!.. In case you switch the environment or your friend join to write with you, make sure that all the gems are being installed before all steps. The command to install all gems in &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;. Okay, let’s move on to the next section.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;write-your-first-post&quot;&gt;Write your first post&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Blogging is baked into Jekyll. You write blog posts as text files and Jekyll provides everything you need to turn it into a blog.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s quite easy to create a new post using Jekyll. You just need to create a post file (markdown or even html file) with a template like so:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;figcaption&gt;_posts/2020-05-12-first-post.md&lt;/figcaption&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-md&quot; data-lang=&quot;md&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;First post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;Tue May 12 07:27:37 +07 &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2020&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Guideline&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Blogging&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;hqtoan94&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+
+This is my first post&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Now you can get back to your browser, access to: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000/2020-05-12-first-post.html&lt;/code&gt; then you’ll see the magic.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/first_post.png&quot; alt=&quot;First post&quot; class=&quot;col-12 col-md-6 d-block mx-auto border&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clean-build-and-test&quot;&gt;Clean, Build and Test&lt;/h3&gt;
+
+&lt;p&gt;To clean generated site, you could run: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll clean&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To generate production site? &lt;code class=&quot;highlighter-rouge&quot;&gt;JEKYLL_ENV=production jekyll build&lt;/code&gt;. This will build jekyll site with production flag and you’ll see the generated code inside &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;After building the site, there is a step you might need to execute before publishing your site. We’re all make mistakes so that a step to test our generated site might really helpful to mitigate the risk and make sure that your readers always be able to read your posts.&lt;/p&gt;
+
+&lt;p&gt;There is a gem which allows you to perform the step above: &lt;a href=&quot;https://github.com/gjtorikian/html-proofer&quot; target=&quot;_blank&quot;&gt;html-proofer&lt;/a&gt;, HTMLProofer is a set of tests to validate your HTML output. To install it, you could add it into your &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; then run &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; or you could run &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install html-proofer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then execute the test:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;htmlproofer &lt;span class=&quot;nt&quot;&gt;--check-html&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--disable-external&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  _site
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To understand more about the command, you could take a look at &lt;a href=&quot;https://github.com/gjtorikian/html-proofer#configuration&quot; target=&quot;_blank&quot;&gt;the configuration page&lt;/a&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;html-proofer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/html-proofer.png&quot; alt=&quot;HtmlProofer&quot; class=&quot;col-12 col-md-6 d-block mx-auto&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;deployment&quot;&gt;Deployment&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-manually&quot;&gt;1. Manually:&lt;/h4&gt;
+
+&lt;p&gt;Finished build step, you already have the website in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder. Now to deploy it, you just need to create a repository under your Github username like so: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;github.io&lt;/code&gt; is necessary since Github will use that to detect the repo as a Github Pages. Then yeah, commit and push all the files inside &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder into the repo. Wait for a couple minues to see the website go live at &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. Here is a &lt;a href=&quot;https://jekyllrb.com/docs/github-pages/&quot; target=&quot;_blank&quot;&gt;detailed document&lt;/a&gt; about how to create Github Pages and deploy your Jekyll site.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-automated&quot;&gt;2. Automated:&lt;/h4&gt;
+
+&lt;p&gt;As you might now, there are a lot of CI tools which offer free plans for Open Source projects such as Circle CI, Travis CI, etc.. But in this post, I will utilize Travis CI because there are some guidelines to handle this step by using Travis CI. Jekyll has &lt;a href=&quot;https://jekyllrb.com/docs/deployment/automated/&quot; target=&quot;_blank&quot;&gt;guided us to integrate Travis CI&lt;/a&gt; as a Continuous Integration Service. Travis CI also has something else for us, &lt;a href=&quot;https://docs.travis-ci.com/user/deployment/pages/&quot; target=&quot;_blank&quot;&gt;Github Pages Deployment guideline&lt;/a&gt;. Why we don’t combine those 2 documents so that we could have a complete CI/CD solution? Hell yeah, let’s set it up.&lt;/p&gt;
+
+&lt;p&gt;Firstly, we have to enable Travis and Github:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go to your profile on travis-ci.org: https://travis-ci.org/profile/&lt;username&gt;&lt;/username&gt;&lt;/li&gt;
+  &lt;li&gt;Find the Github Pages repo (supposed to be &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Flick the repository switch on so that it turns blue.&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file and config the job. Our configuration file will be built as below:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;About build environment, let’s just use default one from Travis CI (Ubuntu Xenial 16.04) and the programming language is &lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;2.6.3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Travis CI has some default options for some fields in the configuration file. You could take a look at &lt;a href=&quot;https://docs.travis-ci.com/user/languages/ruby/&quot; target=&quot;_blank&quot;&gt;Building a Ruby Project&lt;/a&gt; in Travis CI for more information. And one of that is &lt;code class=&quot;highlighter-rouge&quot;&gt;install&lt;/code&gt; field and by default, it will run &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install --jobs=3 --retry=3&lt;/code&gt; so we don’t have to be worried about installing dependencies for Jekyll project anymore.&lt;/p&gt;
+
+&lt;p&gt;The next step, we will set value for script field to build Jekyll project and execute &lt;code class=&quot;highlighter-rouge&quot;&gt;htmlproofer&lt;/code&gt; right after that.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;JEKYLL_ENV=production bundle exec jekyll build&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle exec htmlproofer --check-html --disable-external _site&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you already have Travis CI configration as the Continuous Integrate Service. The final step, we will config Travis CI job to automatially deploy our blog. Just follow Github Pages Deployment guideline above to get the Token, set it up on Travis settings and add these lines:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;github_token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$GITHUB_TOKEN&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Set in the settings page of your repository, as a secure variable&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;target_branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After all, you will have travis configuration file like so:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;figcaption&gt;.travis.yml&lt;/figcaption&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;2.6.3&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;JEKYLL_ENV=production bundle exec jekyll build&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle exec htmlproofer --check-html --disable-external _site&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;github_token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$GITHUB_TOKEN&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Set in the settings page of your repository, as a secure variable&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;target_branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;NOKOGIRI_USE_SYSTEM_LIBRARIES=true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# speeds up installation of html-proofer&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# caching bundler gem packages will speed up build&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;From now on, when you push your post into a branch (neither &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; nor &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;) Travis CI will execute CI and CI only. This could help us to ensure that our new post won’t break the site after generating. Then whenever we want to publish the post, just create PR into &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch. Merging it and Travis will handle the rest. It will execute CI process again then deploy the site by bringing all content in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch as the configuration.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;It’s quite a long guideline to just setup a writing environment right? 😁. But yeah, I think it’s necessary to share to you guys so that if you’re stuck at choosing writing platform steps then this could help you to bypass these steps and move ahead to share your thought and your knowledge to the world. Hope that this article not only helps you guys to setup your own blog but also gives you some initial ideas about CI/CD for a small project. I will come up with another post soon, to discuss with you guys about CI/CD and what’s the value it could bring to you and your projects.&lt;/p&gt;</content><author><name>hqtoan94</name></author><category term="Blogging" /><summary type="html">It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (Wordpress, Medium, Hexo, Jekyll, ...). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://hqtoan94.github.io/%7B%22link%22=%3E%22/assets/images/posts/jekyll_github.png%22,%20%22description%22=%3Enil%7D" /><media:content medium="image" url="https://hqtoan94.github.io/%7B%22link%22=%3E%22/assets/images/posts/jekyll_github.png%22,%20%22description%22=%3Enil%7D" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

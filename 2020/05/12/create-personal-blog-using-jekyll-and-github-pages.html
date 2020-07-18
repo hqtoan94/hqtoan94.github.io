@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <meta property="fb:app_id" content="433542120706345" />
+    <!-- <link rel='shortcut icon' type='image/x-icon' href='/assets/blogger.ico' /> --><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Create personal blog using Jekyll and Github Pages | AWK’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Create personal blog using Jekyll and Github Pages" />
+<meta name="author" content="hqtoan94" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (Wordpress, Medium, Hexo, Jekyll, ...). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories." />
+<meta property="og:description" content="It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (Wordpress, Medium, Hexo, Jekyll, ...). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories." />
+<link rel="canonical" href="https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html" />
+<meta property="og:url" content="https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html" />
+<meta property="og:site_name" content="AWK’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-12T00:27:37+00:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html"},"author":{"@type":"Person","name":"hqtoan94"},"description":"It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (Wordpress, Medium, Hexo, Jekyll, ...). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories.","@type":"BlogPosting","headline":"Create personal blog using Jekyll and Github Pages","dateModified":"2020-05-12T00:27:37+00:00","datePublished":"2020-05-12T00:27:37+00:00","url":"https://hqtoan94.github.io/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
+    <link type="application/atom+xml" rel="alternate" href="https://hqtoan94.github.io/feed.xml" title="AWK's Blog" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-165875592-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+</head>
+<body><nav class="navbar navbar-expand-md sticky-top navbar-light bg-light header shadow-sm">
+    <div class="container"><a class="navbar-brand" rel="author" href="/">AWK&#39;s Blog</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto"><li class="nav-item ">
+                    <a class="nav-link" href="/about/">About us</a>
+                </li><li class="nav-item ">
+                    <a class="nav-link" href="/privacy_policy/">Privacy Policy</a>
+                </li></ul>
+        </div></div>
+</nav>
+<main class="row py-3 mx-0" aria-label="Content">
+        <div class="d-none d-lg-block col-lg-2">
+            <div class="d-flex side-content-panel justify-content-center">
+                
+                    <style>
+  #post-panel {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  }
+
+  #post-panel.active {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<div id="post-panel" class="position-fixed mt-5">
+  
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var top = 100;
+    var postPanelElement = document.getElementById('post-panel');
+    if (document.body.scrollTop > top || document.documentElement.scrollTop > top) {
+      postPanelElement.classList.add('active');
+    } else {
+      postPanelElement.classList.remove('active');
+    }
+  });
+</script>
+
+                
+            </div>
+        </div>
+        <div class="col-12 col-lg-8 bg-light shadow rounded">
+            <div class="p-3">
+                <article class="post h-entry">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Create personal blog using Jekyll and Github Pages</h1>
+    <div class="post-meta d-flex">
+        
+        <img src="/assets/images/avatars/hqtoan94.jpg" class="avatar post-icons" alt="Author's avatar"/>
+        <div class="ml-1">
+          <p class="p-author h-card">
+            <a href="/about/hqtoan94">Toan Quoc Ho</a>
+          </p>
+          
+            <div>
+              
+                <a href="https://www.linkedin.com/in/hqtoan94/">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              
+                <a href="https://www.facebook.com/hqtoan94">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              
+                <a href="https://github.com/hqtoan94">
+                  <i class="fab fa-github"></i>
+                </a>
+              
+            </div>
+          
+          <small>
+            <time class="dt-published" datetime="2020-05-12T00:27:37+00:00" itemprop="datePublished">May 12, 2020
+            </time>
+          </small>
+        </div></div><figure class="image text-center">
+      <img src="/assets/images/posts/jekyll_github.png" class="mx-auto" alt="Post image">
+      <figcaption></figcaption>
+    </figure></header>
+
+  <div class="post-content e-content mx-auto" itemprop="articleBody">
+    <p>It’s hard to pick the right platform to start writing. I’ve been stuck for years just to choose my favo one (<code class="highlighter-rouge">Wordpress, Medium, Hexo, Jekyll, ...</code>). Finally, I decided to use Jekyll as my main writing platform. So I would like to share the process I’ve been through to setup Jekyll and deploy the site to Github Pages. Hope that this could help you to own a blog and start to share your stories. Believe me, It is really great to share with people your stories.</p>
+
+<h3 id="why-jekyll--github-pages">Why Jekyll + Github Pages?</h3>
+
+<p>Jekyll got me the first look because of its flexibility, I could tell you guys a bunch of things that Jekyll can do for you like customizing the CSS or the plugins. As a developer, I’m way excited in code highlight feature when writing technical posts.</p>
+
+<p>With Github Pages, it’s a part of Github so we could leverage a lot of cool features which is provided by Github. In this post, I also show you guys the deployment process which utilizes Travis (they allow free pipelines for public repository).</p>
+
+<p>Okay. Let’s get started.</p>
+
+<h3 id="setup-writing-environment">Setup writing environment</h3>
+
+<h4 id="jekyll"><a href="https://jekyllrb.com/docs/installation/" target="_blank">Jekyll</a></h4>
+
+<p>Follow the instruction to install Jekyll to the corresponding OS. Now you already have writing environment. Close the article 😄..</p>
+
+<p>Just kidding!! After installing Jekyll, we can use it to create a new site by using <code class="highlighter-rouge">jekyll new &lt;PATH&gt;</code> (For more information: <a href="https://jekyllrb.com/docs/usage/" target="_blank">Jekyll Command Line Usage</a>). Then <code class="highlighter-rouge">jekyll serve</code> to serve the site. Normally it will listen on port <code class="highlighter-rouge">4000</code> so you can open your browser and type in: <code class="highlighter-rouge">http://localhost:4000</code>.</p>
+
+<p><img src="/assets/images/posts/jekyll_serve.png" alt="Jekyll Serve Command" class="col-12 col-md-6 d-block mx-auto" /></p>
+
+<p>(Ignore <code class="highlighter-rouge">2&gt;/dev/null</code> part because there is a deprecated message issue with Jekyll 4.0, here is <a href="https://github.com/jekyll/jekyll/issues/7947" target="_blank">Github issue</a> in case you want to follow)</p>
+
+<p>Great! Now you can write posts and publish them to the world. We will move to the next phase to see how it does.</p>
+
+<blockquote>
+  <p>Oh wait!.. In case you switch the environment or your friend join to write with you, make sure that all the gems are being installed before all steps. The command to install all gems in <code class="highlighter-rouge">Gemfile</code> is <code class="highlighter-rouge">bundle install</code>. Okay, let’s move on to the next section.</p>
+</blockquote>
+
+<h3 id="write-your-first-post">Write your first post</h3>
+
+<blockquote>
+  <p>Blogging is baked into Jekyll. You write blog posts as text files and Jekyll provides everything you need to turn it into a blog.</p>
+</blockquote>
+
+<p>It’s quite easy to create a new post using Jekyll. You just need to create a post file (markdown or even html file) with a template like so:</p>
+
+<figure>
+  <figcaption>_posts/2020-05-12-first-post.md</figcaption>
+
+<figure class="highlight"><pre><code class="language-md" data-lang="md"><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span>  <span class="s">First post</span>
+<span class="na">date</span><span class="pi">:</span>   <span class="s">Tue May 12 07:27:37 +07 </span><span class="m">2020</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Guideline</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Blogging</span><span class="pi">]</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">hqtoan94</span>
+<span class="nn">---</span>
+
+This is my first post</code></pre></figure>
+
+</figure>
+
+<p>Now you can get back to your browser, access to: <code class="highlighter-rouge">http://localhost:4000/2020-05-12-first-post.html</code> then you’ll see the magic.</p>
+
+<p><img src="/assets/images/posts/first_post.png" alt="First post" class="col-12 col-md-6 d-block mx-auto border" /></p>
+
+<h3 id="clean-build-and-test">Clean, Build and Test</h3>
+
+<p>To clean generated site, you could run: <code class="highlighter-rouge">jekyll clean</code>.</p>
+
+<p>To generate production site? <code class="highlighter-rouge">JEKYLL_ENV=production jekyll build</code>. This will build jekyll site with production flag and you’ll see the generated code inside <code class="highlighter-rouge">_site</code> folder.</p>
+
+<p>After building the site, there is a step you might need to execute before publishing your site. We’re all make mistakes so that a step to test our generated site might really helpful to mitigate the risk and make sure that your readers always be able to read your posts.</p>
+
+<p>There is a gem which allows you to perform the step above: <a href="https://github.com/gjtorikian/html-proofer" target="_blank">html-proofer</a>, HTMLProofer is a set of tests to validate your HTML output. To install it, you could add it into your <code class="highlighter-rouge">Gemfile</code> then run <code class="highlighter-rouge">bundle install</code> or you could run <code class="highlighter-rouge">gem install html-proofer</code>.</p>
+
+<p>Then execute the test:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htmlproofer <span class="nt">--check-html</span> <span class="se">\</span>
+  <span class="nt">--disable-external</span> <span class="se">\</span>
+  _site
+</code></pre></div></div>
+
+<p>To understand more about the command, you could take a look at <a href="https://github.com/gjtorikian/html-proofer#configuration" target="_blank">the configuration page</a> of <code class="highlighter-rouge">html-proofer</code>.</p>
+
+<p><img src="/assets/images/posts/html-proofer.png" alt="HtmlProofer" class="col-12 col-md-6 d-block mx-auto" /></p>
+
+<h3 id="deployment">Deployment</h3>
+
+<h4 id="1-manually">1. Manually:</h4>
+
+<p>Finished build step, you already have the website in <code class="highlighter-rouge">_site</code> folder. Now to deploy it, you just need to create a repository under your Github username like so: <code class="highlighter-rouge">&lt;username&gt;.github.io</code>. <code class="highlighter-rouge">github.io</code> is necessary since Github will use that to detect the repo as a Github Pages. Then yeah, commit and push all the files inside <code class="highlighter-rouge">_site</code> folder into the repo. Wait for a couple minues to see the website go live at <code class="highlighter-rouge">https://&lt;username&gt;.github.io</code>. Here is a <a href="https://jekyllrb.com/docs/github-pages/" target="_blank">detailed document</a> about how to create Github Pages and deploy your Jekyll site.</p>
+
+<h4 id="2-automated">2. Automated:</h4>
+
+<p>As you might now, there are a lot of CI tools which offer free plans for Open Source projects such as Circle CI, Travis CI, etc.. But in this post, I will utilize Travis CI because there are some guidelines to handle this step by using Travis CI. Jekyll has <a href="https://jekyllrb.com/docs/deployment/automated/" target="_blank">guided us to integrate Travis CI</a> as a Continuous Integration Service. Travis CI also has something else for us, <a href="https://docs.travis-ci.com/user/deployment/pages/" target="_blank">Github Pages Deployment guideline</a>. Why we don’t combine those 2 documents so that we could have a complete CI/CD solution? Hell yeah, let’s set it up.</p>
+
+<p>Firstly, we have to enable Travis and Github:</p>
+
+<ol>
+  <li>Go to your profile on travis-ci.org: https://travis-ci.org/profile/<username></username></li>
+  <li>Find the Github Pages repo (supposed to be <code class="highlighter-rouge">&lt;username&gt;.github.io</code>)</li>
+  <li>Flick the repository switch on so that it turns blue.</li>
+  <li>Create <code class="highlighter-rouge">.travis.yml</code> file and config the job. Our configuration file will be built as below:</li>
+</ol>
+
+<p>About build environment, let’s just use default one from Travis CI (Ubuntu Xenial 16.04) and the programming language is <code class="highlighter-rouge">Ruby</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">language</span><span class="pi">:</span> <span class="s">ruby</span>
+<span class="na">rvm</span><span class="pi">:</span>
+  <span class="s">2.6.3</span>
+</code></pre></div></div>
+
+<p>Travis CI has some default options for some fields in the configuration file. You could take a look at <a href="https://docs.travis-ci.com/user/languages/ruby/" target="_blank">Building a Ruby Project</a> in Travis CI for more information. And one of that is <code class="highlighter-rouge">install</code> field and by default, it will run <code class="highlighter-rouge">bundle install --jobs=3 --retry=3</code> so we don’t have to be worried about installing dependencies for Jekyll project anymore.</p>
+
+<p>The next step, we will set value for script field to build Jekyll project and execute <code class="highlighter-rouge">htmlproofer</code> right after that.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">JEKYLL_ENV=production bundle exec jekyll build</span>
+  <span class="pi">-</span> <span class="s">bundle exec htmlproofer --check-html --disable-external _site</span>
+</code></pre></div></div>
+
+<p>Now you already have Travis CI configration as the Continuous Integrate Service. The final step, we will config Travis CI job to automatially deploy our blog. Just follow Github Pages Deployment guideline above to get the Token, set it up on Travis settings and add these lines:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">deploy</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span> <span class="s">pages</span>
+  <span class="na">skip_cleanup</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">github_token</span><span class="pi">:</span> <span class="s">$GITHUB_TOKEN</span>  <span class="c1"># Set in the settings page of your repository, as a secure variable</span>
+  <span class="na">target_branch</span><span class="pi">:</span> <span class="s">master</span>
+  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">source</span>
+</code></pre></div></div>
+
+<p>After all, you will have travis configuration file like so:</p>
+
+<figure>
+  <figcaption>.travis.yml</figcaption>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">language</span><span class="pi">:</span> <span class="s">ruby</span>
+<span class="na">rvm</span><span class="pi">:</span>
+  <span class="s">2.6.3</span>
+
+<span class="na">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">JEKYLL_ENV=production bundle exec jekyll build</span>
+  <span class="pi">-</span> <span class="s">bundle exec htmlproofer --check-html --disable-external _site</span>
+
+<span class="na">deploy</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span> <span class="s">pages</span>
+  <span class="na">skip_cleanup</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">github_token</span><span class="pi">:</span> <span class="s">$GITHUB_TOKEN</span>  <span class="c1"># Set in the settings page of your repository, as a secure variable</span>
+  <span class="na">target_branch</span><span class="pi">:</span> <span class="s">master</span>
+  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">source</span>
+
+<span class="na">env</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">NOKOGIRI_USE_SYSTEM_LIBRARIES=true</span> <span class="c1"># speeds up installation of html-proofer</span>
+<span class="na">cache</span><span class="pi">:</span> <span class="s">bundler</span> <span class="c1"># caching bundler gem packages will speed up build</span></code></pre></figure>
+
+</figure>
+
+<p>From now on, when you push your post into a branch (neither <code class="highlighter-rouge">master</code> nor <code class="highlighter-rouge">source</code>) Travis CI will execute CI and CI only. This could help us to ensure that our new post won’t break the site after generating. Then whenever we want to publish the post, just create PR into <code class="highlighter-rouge">source</code> branch. Merging it and Travis will handle the rest. It will execute CI process again then deploy the site by bringing all content in <code class="highlighter-rouge">_site</code> folder into <code class="highlighter-rouge">master</code> branch as the configuration.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>It’s quite a long guideline to just setup a writing environment right? 😁. But yeah, I think it’s necessary to share to you guys so that if you’re stuck at choosing writing platform steps then this could help you to bypass these steps and move ahead to share your thought and your knowledge to the world. Hope that this article not only helps you guys to setup your own blog but also gives you some initial ideas about CI/CD for a small project. I will come up with another post soon, to discuss with you guys about CI/CD and what’s the value it could bring to you and your projects.</p>
+
+  </div>
+
+  <a class="u-url" href="/2020/05/12/create-personal-blog-using-jekyll-and-github-pages.html" hidden></a>
+</article>
+
+                
+            </div>
+            
+                <div id="disqus_thread" class="col-lg-8 mx-auto"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://hqtoan94.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </div>
+        <div class="d-none d-lg-block col-lg-2">
+            <div class="d-flex side-content-panel">
+                
+            </div>
+        </div>
+    </main><footer class="row shadow mx-0">
+    <div class="col-12 col-lg-8 offset-lg-2 pt-3">
+        <div class="px-3">
+            <h2 class="footer-heading">AWK&#39;s Blog</h2>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-8">
+                    <ul class="contact-list mb-0">
+                        <li><i class="far fa-copyright"></i> 2020 Toan Quoc Ho. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="d-none d-md-block col-md-4 text-right">
+                    <p>Sharing is Caring</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script src="/assets/vendor/jquery.min.js"></script>
+    <script src="/assets/vendor/bootstrap.min.js"></script>
+</body>
+
+</html>

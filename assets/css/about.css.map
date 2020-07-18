@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "about.css",
+	"sources": [
+		"about.scss",
+		"_sass/variables.scss"
+	],
+	"sourcesContent": [
+		"@import \"variables\";\n\n.connect {\n    cursor: pointer;\n\n    .icon {\n        font-size: 2em;\n    }\n}\n\n.cert-badge {\n    top: 0;\n    right: 0;\n    width: 35%;\n}\n\n@media (min-width: $breakpoint-medium) {\n    .w-md-75 {\n        width: 75% !important;\n    }\n}\n",
+		"$facebook_color: #3578E5;\n$github_color: #000;\n$google_color: #DC4D44;\n$linkedin_color: #096DA9;\n\n$breakpoint-small: 576px;\n$breakpoint-medium: 768px;\n$breakpoint-large: 992px;\n$breakpoint-extra-large: 1200px;\n"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,QAAQ,AAAC,CACL,MAAM,CAAE,OAAO,CAKlB,AAND,AAGI,QAHI,CAGJ,KAAK,AAAC,CACF,SAAS,CAAE,GAAG,CACjB,AAGL,AAAA,WAAW,AAAC,CACR,GAAG,CAAE,CAAC,CACN,KAAK,CAAE,CAAC,CACR,KAAK,CAAE,GAAG,CACb,AAED,MAAM,mBACF,CAAA,AAAA,QAAQ,AAAC,CACL,KAAK,CAAE,cAAc,CACxB,CAAA"
+}
