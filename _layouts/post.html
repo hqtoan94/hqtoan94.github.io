@@ -8,7 +8,7 @@ layout: default
       {%- if page.author -%}
         {% assign author = site.data.authors | where:"nickname",page.author | first %}
         {% assign author_link = "/about/" | append: author.nickname %}
-        <img src="{{ author.avatar }}" class="avatar post-icons"/>
+        <img src="{{ author.avatar }}" class="avatar post-icons" alt="Author's avatar"/>
         <div class="ml-1">
           <p class="p-author h-card">
             <a href="{{ author_link | relative_url }}">{{ author.name }}</a>
