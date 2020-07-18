@@ -41,3 +41,32 @@ a.post-link:visited {
         margin-top: 3rem;
     }
 }
+
+.post-meta {
+  font-size: inherit;
+}
+
+.avatar {
+  border-radius: 100%;
+  border: solid 2px #CCC;
+  padding: 2px;
+}
+
+
+.fa-facebook {
+  color: $facebook_color;
+}
+
+.fa-github {
+  color: $github_color;
+}
+
+.fa-google {
+  color: $google_color;
+}
+
+.fa-linkedin {
+  color: $linkedin_color;
+}
+
+@import "post-styles";

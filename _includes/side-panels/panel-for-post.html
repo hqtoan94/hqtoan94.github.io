@@ -12,8 +12,10 @@
 </style>
 
 <div id="post-panel" class="position-fixed mt-5">
-  <p class="mb-0">Find this useful?</p>
-  {% include buy_me_a_coffee.html %}
+  {% if page.buy_me_a_coffee %}
+    <p class="mb-0">Find this useful?</p>
+    {% include buy_me_a_coffee.html %}
+  {% endif %}
 </div>
 
 <script>

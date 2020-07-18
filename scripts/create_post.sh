@@ -29,7 +29,7 @@ date:   $DATE
 categories: $CATEGORIES
 tags: $TAGS
 comments: true
-buy_me_a_coffee: true
+buy_me_a_coffee: false
 author: $AUTHOR
 
 side_panel:

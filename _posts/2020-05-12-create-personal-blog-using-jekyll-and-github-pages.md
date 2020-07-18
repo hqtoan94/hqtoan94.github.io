@@ -5,7 +5,7 @@ date:   Tue May 12 07:27:37 +07 2020
 categories: [Guideline]
 tags: [Blogging]
 comments: true
-buy_me_a_coffee: true
+buy_me_a_coffee: false
 author: hqtoan94
 
 side_panel:

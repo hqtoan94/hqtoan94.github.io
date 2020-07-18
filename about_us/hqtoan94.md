@@ -20,11 +20,11 @@ custom_css:
     <h3 class="mt-1">{{ author.name }}</h3>
     <p class="text-center">I'm faking to be a Tech Lead</p>
     <div class="connect mx-3 d-flex flex-row align-items-center">
-        <a href="https://www.linkedin.com/in/hqtoan94/" target="_blank"><i class="icon fab fa-linkedin mr-1"></i></a>
+        <a href="https://www.linkedin.com/in/hqtoan94/" target="_blank" class="text-center"><i class="icon fab fa-linkedin mr-1"></i></a>
         &nbsp;&nbsp;
-        <a href="https://www.facebook.com/hqtoan94" target="_blank"><i class="icon fab fa-facebook mr-1"></i></a>
+        <a href="https://www.facebook.com/hqtoan94" target="_blank" class="text-center"><i class="icon fab fa-facebook mr-1"></i></a>
         &nbsp;&nbsp;
-        <a href="https://github.com/hqtoan94" target="_blank"><i class="icon fab fa-github"></i></a>
+        <a href="https://github.com/hqtoan94" target="_blank" class="text-center"><i class="icon fab fa-github"></i></a>
     </div>
 </div>
 

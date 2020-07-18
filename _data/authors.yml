@@ -7,6 +7,13 @@
   quote:
     content: "Part of growing is making decisions and living with the consequences"
     said: Coach Carter
+  contacts:
+    - iconClasses: fab fa-linkedin
+      url: https://www.linkedin.com/in/hqtoan94/
+    - iconClasses: fab fa-facebook
+      url: https://www.facebook.com/hqtoan94
+    - iconClasses: fab fa-github
+      url: https://github.com/hqtoan94
 
 - nickname: dotdak
   name: Hung Hong Nguyen

@@ -9,11 +9,6 @@ custom_css:
 
 {:.mt-5}
 We're just some developers who want to giving our 2 cents to the world. Cuz sharing is caring.
-And if you're caring about us?
-
-<div class="d-flex mb-3 justify-content-center">
-    {% include buy_me_a_coffee.html %}
-</div>
 
 ---
 
@@ -63,21 +58,6 @@ And if you're caring about us?
               </div>
           </div>
           <hr class="ml-3 my-3">
-          {%- assign filtered_posts = site.posts | where: "author",author.nickname -%}
-          {%- if filtered_posts.size > 0 -%}
-              <h5>Resent posts by {{ author.nickname }}:</h5>
-              {%- for post in filtered_posts limit:3 -%}
-                  <li>
-                      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                      <span class="post-meta">{{ post.date | date: date_format }}</span>
-                      <h3>
-                      <a class="post-link" href="{{ post.url | relative_url }}">
-                          {{ post.title | escape }}
-                      </a>
-                      </h3>
-                  </li>
-              {%- endfor -%}
-          {%- endif -%}
       </div>
   </div>
 {% endfor %}
